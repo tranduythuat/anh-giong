@@ -1,0 +1,80 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.album {
+    width: 100%;
+    aspect-ratio: 500 / 890;
+    background: url('../../assets/images/bg.png') no-repeat center / cover;
+
+    .content {
+        width: 100%;
+
+        h2 {
+            font-family: $font-main;
+            font-size:58px;
+            font-weight: 300;
+            color: $title-color;
+            margin-bottom: 2%
+        }
+
+        .album-grid {
+            @include flex-center;
+            flex-direction: column;
+            width: 100%;
+            .row {
+                display: flex; 
+                justify-content: center;
+                width: 100%;
+                .col {
+                    width: 100%;
+                    // background-color: #8f441fff;
+                    margin: 1%;
+                    border-radius: 15px;
+                    .img-box {
+                        width: 100%;
+                        height: 100%;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            border-radius: 15px;
+                        }
+                    }
+                }
+                .col:nth-child(1) {
+                    width: 260px;
+                    aspect-ratio: 260 / 240;
+                    // width: 100%;
+                }
+                .col:nth-child(2) {
+                    width: 154px;
+                    aspect-ratio: 154 / 240;
+                    // width: 100%;
+                }
+            }
+
+            .row:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+        }
+    }
+
+    @media (max-width: 500px) {
+        .content {
+            h2 {
+                font-size: calc((58 / 500) * 100vw);
+            }
+
+            .album-grid {
+                .row {
+                    .col:nth-child(1) {
+                        width: calc((260 / 500) * 100vw);
+                    }
+                    .col:nth-child(2) {
+                        width:  calc((154 / 500) * 100vw);
+                    }
+                }
+            }
+        }
+    }
+}

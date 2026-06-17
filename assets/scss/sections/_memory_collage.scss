@@ -1,0 +1,105 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.memory-collage {
+    width: 100%;
+    aspect-ratio: 500 / 580;
+    background: url('../../assets/images/bg.png') no-repeat center / cover;
+    @include flex-center;
+    padding: 5%;
+
+    .content {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        perspective: 1000px;
+        .box-imgs {
+            position: absolute;
+            perspective: 1000px;
+            border-radius: 5px;
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-left: 18px solid #d3c5c0;
+                border-right: 18px solid #d3c5c0;
+                border-top: 18px solid #d3c5c0;
+                border-bottom: 70px solid #d3c5c0;
+                border-radius: 5px;
+                box-shadow: 5px 5px 10px #b5b0ad;
+            } 
+            &:nth-child(2) {
+                max-width: 298px;
+                width: 100%;
+                aspect-ratio: 298 / 278;
+                top: 5%;
+                left: 2%;
+                transform: rotate(8deg);
+                img {
+                    object-position: 100% 30%;
+                }
+            }
+    
+            &:nth-child(3) {
+                max-width: 310px;
+                width: 100%;
+                aspect-ratio: 323 / 306;
+                right: 3%;
+                bottom: 1%;
+                transform: rotate(-8deg);
+                img {
+                    object-position: 100% 19%;
+                }
+            }
+        }
+        img.flower-collage {
+            position: absolute;
+        }
+
+        img.flower-collage-1 {
+            width: 236px;
+            height: auto;
+            top: 7%;
+            right: -4%;
+        }
+
+        img.flower-collage-2 {
+            width: 191px;
+            height: auto;
+            top: 34%;
+            left: 10%;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .content {
+            .box-imgs {
+                border-radius: calc((5 / 500) * 100vw);
+                img {
+                    border-left: calc((18 / 500) * 100vw) solid #d3c5c0;
+                    border-right: calc((18 / 500) * 100vw) solid #d3c5c0;
+                    border-top: calc((18 / 500) * 100vw) solid #d3c5c0;
+                    border-bottom: calc((70 / 500) * 100vw) solid #d3c5c0;
+                    border-radius: calc((5 / 500) * 100vw);
+                    box-shadow: calc((5 / 500) * 100vw) calc((5 / 500) * 100vw) calc((10 / 500) * 100vw) #b5b0ad;
+                } 
+                &:nth-child(2) {
+                    max-width: calc((298 / 500) * 100vw);
+                }
+        
+                &:nth-child(3) {
+                    max-width: calc((310 / 500) * 100vw);
+                }
+            }
+
+            img.flower-collage-1 {
+                width: calc((236 / 500) * 100vw);
+            }
+    
+            img.flower-collage-2 {
+                width: calc((191 / 500) * 100vw);
+            }
+        }
+    }
+}

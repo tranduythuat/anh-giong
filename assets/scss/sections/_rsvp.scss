@@ -1,0 +1,238 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.rsvp {
+    width: 100%;
+    background: url('../../assets/images/bg.png') repeat center / contain;
+    .content {
+        width: 100%;
+        font-family: $font-gotham;
+
+        .header {
+            img.decoration {
+                width: 37px;
+                height: auto;
+                margin: 10% 0 5%;
+            }
+
+            h2 {
+                font-family: $font-main;
+                font-size: 45px;
+                font-weight: 300;
+                color: $title-color;
+            }
+            p {
+                line-height: 1.8;
+            }
+            p.lead {
+                padding: 0 11%;
+                margin-bottom: 2%;
+            }
+            p.vi-title {
+                font-size: 11px;
+                margin-bottom: 8%;
+            }
+        }
+
+        .divider {
+            margin: 10% 0 8%;
+            img {
+                width: 8.5px;
+                height: auto;
+            }
+        }
+
+        .rsvp-form {
+            display: block;
+            padding: 0 9%;
+
+            .button-group {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 6%;
+                margin-bottom: 2%;
+
+                .radio-wrapper {
+                    position: relative;
+                }
+
+                .radio-wrapper input[type="radio"] {
+                    position: absolute;
+                    opacity: 0;
+                    cursor: pointer;
+                }
+
+                .radio-label {
+                    display: block;
+                    padding: 3%;
+                    border: 2px solid $title-color;
+                    border-radius: 8px;
+                    background: transparent;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    text-transform: uppercase;
+                    text-align: center;
+
+                    &:hover {
+                        background: #ded1c3;
+                    }
+                }
+
+                .radio-wrapper input[type="radio"]:checked + .radio-label {
+                    background: $title-color;
+                    color: white;
+                }
+            }
+
+            .form-group {
+                margin-bottom: 2%;
+
+                input[type="text"],
+                input[type="number"],
+                textarea {
+                    width: 100%;
+                    padding: 2% 4%;
+                    border: 2px solid $title-color;
+                    border-radius: 8px;
+                    background: transparent;
+                    font-size: 9.11px;
+                    color: #333;
+                    transition: border-color 0.3s ease;
+                    // text-transform: uppercase;
+                }
+
+                input[type="text"]:focus,
+                input[type="number"]:focus,
+                textarea:focus {
+                    outline: none;
+                    border-color:$title-color;;
+                }
+
+                textarea {
+                    aspect-ratio: 500 / 100;
+                    resize: vertical;
+                    font-family: inherit;
+                }
+            }
+
+            .form-group.guest-number {
+                display: flex;
+                justify-content: space-between;
+                label {
+                    width: 35%;
+                }
+
+                input {
+                    width: 62%;
+                }
+            }
+
+            .form-group.dietary {
+                margin-top: 8%;
+                p {
+                    margin-bottom: 1%;
+                }
+                p.subtitle {
+                    margin-bottom: 4%;
+                }
+            }
+
+            .form-group.other {
+                margin-bottom: 8%;
+            }
+
+            .message {
+                text-align: center;
+                margin: 10% 0 4%;
+                p {
+                    margin-bottom: 2%;
+                }
+            }
+    
+            .submit-btn {
+                width: 30%;
+                padding: 2%;
+                background: $title-color;
+                color: white;
+                border: none;
+                border-radius: 10px;
+                font-weight: 600;
+                font-size: 9.11px;
+                cursor: pointer;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                transition: background 0.3s ease;
+                margin-bottom: 10%;
+            }
+    
+            .submit-btn:hover {
+                background: #8f441fff;
+                opacity: 0.9;
+            }
+    
+            .submit-btn:active {
+                transform: scale(0.98);
+            }
+    
+        }
+    }
+
+    label {
+        font-family: $font-gotham;
+        display: block;
+        margin-bottom: 2%;
+        text-transform: uppercase;
+        font-size: 9.11px;
+    }
+
+    .text-size-10 {
+        font-size: 9.11px;
+    }
+
+    .text-size-8, .subtitle {
+        font-size: 8px;
+        font-style: italic;
+    }
+
+    @media (max-width: 500px) {
+        .content {
+            .header {
+                img.decoration {
+                    width: calc((37 / 500) * 100vw);
+                }
+    
+                h2 {
+                    font-size: calc((45 / 500) * 100vw);
+                }
+            
+                p.vi-title {
+                    font-size: calc((11 / 500) * 100vw);
+                }
+            }
+
+            .divider {
+                img {
+                    width: calc((8.5 / 500) * 100vw);
+                }
+            }
+           
+            .text-size-10, label{
+                font-size: calc((9.11 / 500) * 100vw);
+            }
+        
+            .text-size-8, .subtitle {
+                font-size: calc((8 / 500) * 100vw);
+            }
+
+            .rsvp-form {
+                .form-group {
+                    input[type="text"],
+                    input[type="number"],
+                    textarea {
+                        font-size: calc((9.11 / 500) * 100vw);
+                    }
+                }
+            }
+        }
+    }
+}

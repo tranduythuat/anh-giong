@@ -1,0 +1,177 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+
+#page1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    margin: auto;
+}
+
+#page1.hidden {
+    display: none;
+}
+
+.envelope-container {
+    background: url('../../assets/images/base-bg.png') repeat center / cover;
+    max-width: 500px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow-x: hidden;
+    // box-shadow: $shadow-default;
+    @include flex-center;
+}
+
+.shake-text {
+    animation: shakeWithPause 3s ease-in-out infinite;
+}
+
+@keyframes shakeWithPause {
+    /* Rung lắc nhẹ - kéo dài hơn */
+    0%, 100% {
+        transform: translateX(0);
+    }
+    3% {
+        transform: translateX(-3px) rotate(-1deg);
+    }
+    6% {
+        transform: translateX(3px) rotate(1deg);
+    }
+    9% {
+        transform: translateX(-3px) rotate(-1deg);
+    }
+    12% {
+        transform: translateX(3px) rotate(1deg);
+    }
+    15% {
+        transform: translateX(-3px) rotate(-1deg);
+    }
+    18% {
+        transform: translateX(3px) rotate(1deg);
+    }
+    21% {
+        transform: translateX(-2px) rotate(-0.5deg);
+    }
+    24% {
+        transform: translateX(2px) rotate(0.5deg);
+    }
+    27% {
+        transform: translateX(-2px) rotate(-0.5deg);
+    }
+    30% {
+        transform: translateX(2px) rotate(0.5deg);
+    }
+    33% {
+        transform: translateX(-1px) rotate(-0.3deg);
+    }
+    36% {
+        transform: translateX(1px) rotate(0.3deg);
+    }
+    39% {
+        transform: translateX(-1px) rotate(-0.3deg);
+    }
+    42% {
+        transform: translateX(0) rotate(0deg);
+    }
+    /* Nghỉ một đoạn */
+    42%, 100% {
+        transform: translateX(0) rotate(0deg);
+    }
+}
+
+.envelope {
+    width: 100%;
+    height: 100%;
+    font-family: 'SVN-GothamBook', sans-serif;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    padding-top: 15%;
+    
+    .save-date-text p, .date {
+        text-transform: uppercase;
+        margin-bottom: 5%;
+    }
+
+    .names {
+        font-family: 'Hikary', sans-serif;
+        font-size: 32px;
+        font-weight: 300;
+        color: #8f441fff;
+        margin-bottom: 10%;
+    }
+    .envelope-imgs {
+        max-width: 383px;
+        width: 100%;
+        aspect-ratio: 383 / 456;
+        margin: 0 auto;
+        position: relative;
+        .envelope-backend {
+            width: 100%;
+            height: 100%;
+            background: url('../../assets/images/letter-bg.png') no-repeat center / cover;
+        }
+
+        .photo-frame {
+            position: absolute;
+            bottom: 5%;
+            max-width: 383px;
+            width: 100%;
+            aspect-ratio: 383 / 243;
+            background: url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/anh-giong/GRI03349.webp') no-repeat center / cover;
+            border:10px solid #fff;
+        }
+        .envelope-front {
+            position: absolute;
+            bottom: 0;
+            max-width: 383px;
+            width: 100%;
+            aspect-ratio: 383 / 266;
+            background: url('../../assets/images/letter-front.png') no-repeat center / cover;
+        }
+
+        .open-btn {
+            text-decoration: none;
+            color: #000;
+            position: absolute;
+            bottom: 4%;
+            left: 43%;
+            font-size: 11.5px;
+            text-transform: uppercase;
+            color: #814d25ff;
+        }
+    }
+    .date {
+        margin-top: 5%;
+    }
+
+    @media (max-width: 500px) {
+        font-size: calc((12 / 500) * 100vw);
+        .names {
+            font-size: calc((32 / 500) * 100vw);
+        }
+
+        .envelope-imgs {
+            max-width: calc((383 / 500) * 100vw);
+
+            .open-btn {
+                font-size: calc((11.5 / 500) * 100vw);
+            }
+
+            .photo-frame {
+                border:calc((10 / 500) * 100vw) solid #fff;
+            }
+        }
+    }
+}
+

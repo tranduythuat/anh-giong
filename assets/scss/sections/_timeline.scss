@@ -1,0 +1,83 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.timeline {
+    width: 100%;
+    aspect-ratio: 500 / 585;
+    background: url('../../assets/images/bg.png') no-repeat center / cover;
+    
+    .timeline-items {
+        width: 371px;
+        aspect-ratio: 371 / 513;
+        background: url('../../assets/images/flower circle.png') no-repeat center / cover ;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        .item {
+            @include flex-center;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 8%;
+            .icon {
+                max-width: 39px;
+                width: 100%;
+                margin-bottom: 2%;
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            .text-box {
+                p {
+                    font-family: $font-gotham;
+                    text-transform: uppercase;
+                    margin-bottom: 3% ;
+                    font-size: 12.7px;
+                }
+                p.time-and-title {
+                    span {
+                        font-family: $font-gothamBold;
+                    }
+                }
+                p.vi {
+                    font-size: 7.5px;
+                    font-style: italic;
+                }
+            }
+        }
+
+        .item:nth-child(2) {
+            .icon {
+                max-width: 22px;
+            }
+        }
+    }
+
+    @media (max-width: 500px) {
+        .timeline-items {
+            width: calc((371 / 500) * 100vw);
+
+            .item {
+                .icon {
+                    max-width: calc((39 / 500) * 100vw);
+                }
+                .text-box {
+                    p {
+                        font-size: calc((12.7 / 500) * 100vw);
+                    }
+                    p.vi {
+                        font-size: calc((7.5 / 500) * 100vw);
+                    }
+                }
+            }
+    
+            .item:nth-child(2) {
+                .icon {
+                    max-width: calc((22 / 500) * 100vw);
+                }
+            }
+        }
+    }
+}

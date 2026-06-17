@@ -1,0 +1,76 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.hero {
+    width: 100%;
+    .content {
+        aspect-ratio: 500 / 820;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.481), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0),rgba(0, 0, 0, 0.341)), url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/anh-giong/GRI02935.webp') no-repeat bottom / cover;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+        color: #fff;
+        .logo-box {
+            max-width: 53px;
+            margin-top: 10%  ;
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .text-box {
+            .always {
+                display: inline-block;
+                font-family: $font-main;
+                font-size: 18px;
+                position: relative;
+                &::after, &::before {
+                    content: "•"; /* dấu chấm */
+                    font-size: 30px;
+                    color: #fff; /* màu tùy chỉnh */
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-40%);
+                }
+                &::before {
+                    left: -10%;
+                }
+
+                &::after {
+                    right: -10%;
+                }
+            }
+
+            .welcome {
+                font-family: $font-gotham;
+                margin-bottom: 3%;
+                font-size: 11px;
+            }
+            .names {
+                font-family: $font-main;
+                font-size: 40px;
+                margin-bottom: 10%;
+            }
+        }
+    }
+
+    @media (max-width: 500px) {
+        .content {
+            .logo-box {
+                max-width: calc((53 / 500) * 100vw);
+            }
+
+            .text-box {
+                .welcome {
+                    font-size: calc((11 / 500) * 100vw);;
+                }
+                .names {
+                    font-size: calc((40 / 500) * 100vw);;
+                }
+            }
+        }
+    }
+}

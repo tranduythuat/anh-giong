@@ -1,0 +1,182 @@
+
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.invite {
+    .content {
+        width: 100%;
+        aspect-ratio: 500 / 1060;
+        background: url('../../assets/images/bg.png') no-repeat center / cover;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        color: #000;
+        font-family: $font-gotham;
+
+        .ivitation-img {
+            max-width: 347px;
+            width: 100%;
+            margin-bottom: 11%;
+            img {
+                width: 100%;
+                height: auto;
+            }
+
+        }
+        .invite-text {
+            text-transform: uppercase;
+            p {
+                margin-bottom: 2%;
+            }
+            .bold {
+                font-weight: bold;
+            }
+            .thin {
+                margin-bottom: 5%;
+            }
+            .vn {
+                line-height: 1.5;
+                font-style: italic;
+            }
+        }
+
+        .photo-box {
+            max-width: 243px;
+            width: 100%;
+            margin: 8% 0;
+            position: relative;
+            perspective: 1000px;
+
+            img.main {
+                width: 100%;
+                height: auto;
+            }
+            img.flower-01 {
+                width: 148px;
+                height: auto;
+                position: absolute;
+                right: -39%;
+                bottom: -3%;
+            }
+        }
+
+        .date-block {
+            text-transform: uppercase;
+            p {
+                margin-bottom: 2%;
+            }
+            .vn {
+                font-style: italic;
+            }
+            .date-main {
+                font-family: $font-gothamBold;
+                font-size: 25px;
+                margin-top: 5%;               
+            }
+
+            .date-sub {
+                font-weight: 700;
+                margin-top: 1%;
+            }
+        }
+
+        .divider-box {
+            max-width: 9px;
+            width: 100%;
+            margin: 8% 0 ;
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .location-block {
+            .name {
+                font-family: $font-main;
+                font-size: 36px;
+                font-weight: 300;
+                color: $title-color;
+            }
+
+            .address {
+                font-style: italic;
+                margin: 3% 0;
+            }
+        }
+
+        .btn-wrap {
+            .map-btn {
+                display: block;
+                text-decoration: none;
+                color: #fff;
+                font-size: 9.2px;
+                font-family: $font-gothamBold;
+                width: 158px;
+                padding: 3% 0;
+                background-color: $title-color;
+                border-radius: 5px;
+            }
+        }
+
+        .text-size-10 {
+            font-size: 10px;
+        }
+
+        .text-size-7 {
+            font-size: 7px;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .content {
+            .ivitation-img {
+                max-width: calc((347 / 500) * 100vw);
+            }
+
+            .photo-box {
+                max-width: calc((243 / 500) * 100vw);
+                img.flower-01 {
+                    width:  calc((148 / 500) * 100vw);
+                }
+            }
+
+            .date-block {
+                .date-main {
+                    font-size: calc((25 / 500) * 100vw);
+                }
+                .date-sub {
+                    font-size: calc((12 / 500) * 100vw);
+                }
+    
+            }
+
+            .divider-box {
+                max-width: calc((9 / 500) * 100vw);
+            }
+    
+
+            .location-block {
+                .name {
+                    font-size: calc((36 / 500) * 100vw);
+                }
+            }
+    
+            .btn-wrap {
+                .map-btn {
+                    font-size: calc((9.2 / 500) * 100vw);
+                    width: calc((158 / 500) * 100vw);
+                }
+            }
+    
+            .text-size-10 {
+                font-size: calc((10 / 500) * 100vw);
+            }
+    
+            .text-size-7 {
+                font-size: calc((7 / 500) * 100vw);
+            }
+        }
+    }
+}
