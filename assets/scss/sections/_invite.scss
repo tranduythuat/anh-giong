@@ -5,8 +5,8 @@
 .invite {
     .content {
         width: 100%;
-        aspect-ratio: 500 / 1060;
-        background: url('../../assets/images/bg.png') no-repeat center / cover;
+        aspect-ratio: 500 / 1460;
+        background: url('../../assets/images/bg.png') repeat center / contain;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -82,6 +82,16 @@
             }
         }
 
+        .calender {
+            margin-top: 10%;
+            perspective: 1000px;
+            img {
+                max-width: 434px;
+                width: 100%;
+                height: auto;
+            }
+        }
+
         .divider-box {
             max-width: 9px;
             width: 100%;
@@ -152,6 +162,12 @@
     
             }
 
+            .calender {
+                img {
+                    max-width: calc((434 / 500) * 100vw);
+                }
+            }
+    
             .divider-box {
                 max-width: calc((9 / 500) * 100vw);
             }
