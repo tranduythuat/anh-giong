@@ -1,0 +1,101 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.qrcode {
+    width: 100%;
+    .content {
+        width: 100%;
+        background: url('../../assets/images/bg.png') no-repeat center / cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        font-family: $font-gotham;
+
+        h2 {
+            font-size: 52px;
+            font-family: $font-main;
+            color: $title-color;
+            font-weight: 300;
+            line-height: 1.6;
+            padding: 2% 0;
+        }
+
+        .vi-title {
+            font-size: 11px;
+            text-transform: uppercase;
+            margin-bottom: 10%;
+        }
+
+        .divider-image {
+            margin-bottom: 15%;
+            img {
+                width: 81px;
+                height: auto;
+            }
+        }
+
+        .description {
+            font-size: 9.11px;
+            line-height: 1.8;
+            margin-bottom: 2%;
+            text-transform: uppercase;
+        }
+        .vi {
+            line-height: 1.8;
+            font-size: 8px;
+            margin-bottom: 4%;
+            text-transform: uppercase;
+        }
+
+        .qrcode {
+            margin: 5% 0 2%;
+            perspective: 1000px;
+            img {
+                max-width: 200px;
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+            }
+        }
+        .qrcode-info {
+            line-height: 1.5;
+            font-size: 13px;
+            margin-bottom: 15%;
+        }
+
+        @media (max-width: 500px) {
+            h2 {
+                font-size: calc((52 / 500) * 100vw);
+            }
+    
+            .vi-title {
+                font-size: calc((11 / 500) * 100vw);
+            }
+    
+            .divider-image {
+                img {
+                    width: calc((81 / 500) * 100vw);
+                }
+            }
+    
+            .description {
+                font-size: calc((9.11 / 500) * 100vw);
+            }
+            .vi {
+                font-size: calc((8 / 500) * 100vw);
+            }
+    
+            .qrcode {
+                img {
+                    max-width: calc((200 / 500) * 100vw);
+                    border-radius: calc((10 / 500) * 100vw);
+                }
+            }
+            .qrcode-info {
+                font-size: calc((13 / 500) * 100vw);
+            }
+        }
+    }
+}

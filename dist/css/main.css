@@ -1098,16 +1098,16 @@ header {
 
 .button-links {
   width: 100%;
-  background: url("../../assets/images/bg.png") no-repeat center/cover;
 }
 .button-links .content {
+  background: url("../../assets/images/bg.png") no-repeat center/cover;
   width: 100%;
   font-family: "SVN-GothamBook", sans-serif;
   display: flex;
   justify-content: center;
   text-align: center;
   flex-direction: column;
-  padding: 10% 0 20%;
+  padding: 0% 0 20%;
 }
 .button-links .content .booking h2 {
   font-size: 52px;
@@ -1173,6 +1173,91 @@ header {
   }
   .button-links .content .action-btn {
     font-size: 1.822vw;
+  }
+}
+
+.qrcode {
+  width: 100%;
+}
+.qrcode .content {
+  width: 100%;
+  background: url("../../assets/images/bg.png") no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  font-family: "SVN-GothamBook", sans-serif;
+}
+.qrcode .content h2 {
+  font-size: 52px;
+  font-family: "Hikary", sans-serif;
+  color: #8f441f;
+  font-weight: 300;
+  line-height: 1.6;
+  padding: 2% 0;
+}
+.qrcode .content .vi-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  margin-bottom: 10%;
+}
+.qrcode .content .divider-image {
+  margin-bottom: 15%;
+}
+.qrcode .content .divider-image img {
+  width: 81px;
+  height: auto;
+}
+.qrcode .content .description {
+  font-size: 9.11px;
+  line-height: 1.8;
+  margin-bottom: 2%;
+  text-transform: uppercase;
+}
+.qrcode .content .vi {
+  line-height: 1.8;
+  font-size: 8px;
+  margin-bottom: 4%;
+  text-transform: uppercase;
+}
+.qrcode .content .qrcode {
+  margin: 5% 0 2%;
+  perspective: 1000px;
+}
+.qrcode .content .qrcode img {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.qrcode .content .qrcode-info {
+  line-height: 1.5;
+  font-size: 13px;
+  margin-bottom: 15%;
+}
+@media (max-width: 500px) {
+  .qrcode .content h2 {
+    font-size: 10.4vw;
+  }
+  .qrcode .content .vi-title {
+    font-size: 2.2vw;
+  }
+  .qrcode .content .divider-image img {
+    width: 16.2vw;
+  }
+  .qrcode .content .description {
+    font-size: 1.822vw;
+  }
+  .qrcode .content .vi {
+    font-size: 1.6vw;
+  }
+  .qrcode .content .qrcode img {
+    max-width: 40vw;
+    border-radius: 2vw;
+  }
+  .qrcode .content .qrcode-info {
+    font-size: 2.6vw;
   }
 }
 
