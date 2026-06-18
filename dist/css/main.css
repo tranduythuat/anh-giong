@@ -910,6 +910,9 @@ header {
   resize: vertical;
   font-family: inherit;
 }
+.rsvp .content .rsvp-form .form-group textarea#other {
+  aspect-ratio: 500/55;
+}
 .rsvp .content .rsvp-form .form-group.guest-number {
   display: flex;
   justify-content: space-between;
@@ -1140,9 +1143,12 @@ header {
   font-weight: 300;
 }
 .button-links .content .action-btn {
+  display: block;
+  width: 80%;
   font-family: "SVN-gothamBold", sans-serif;
   text-decoration: none;
   padding: 1.7% 7%;
+  margin: 0 auto;
   background: #8f441f;
   color: white;
   border: none;
