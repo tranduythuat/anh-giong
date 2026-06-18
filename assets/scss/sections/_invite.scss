@@ -86,7 +86,7 @@
             margin-top: 10%;
             perspective: 1000px;
             img {
-                max-width: 434px;
+                max-width: 350px;
                 width: 100%;
                 height: auto;
             }
@@ -164,7 +164,7 @@
 
             .calender {
                 img {
-                    max-width: calc((434 / 500) * 100vw);
+                    max-width: calc((350 / 500) * 100vw);
                 }
             }
     
