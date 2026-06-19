@@ -7,7 +7,7 @@
     background: url('../../assets/images/bg.png') no-repeat center / cover;
     
     .timeline-items {
-        width: 371px;
+        width: 420px;
         aspect-ratio: 371 / 513;
         background: url('../../assets/images/flower circle.png') no-repeat center / cover ;
         display: flex;
@@ -57,7 +57,7 @@
 
     @media (max-width: 500px) {
         .timeline-items {
-            width: calc((371 / 500) * 100vw);
+            width: calc((420 / 500) * 100vw);
 
             .item {
                 .icon {

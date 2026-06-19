@@ -182,7 +182,35 @@ document.addEventListener("DOMContentLoaded", () => {
   if (form) {
     form.addEventListener("submit", (e) => handleFormSubmit(e));
   }
+
+  const qrcode = document.getElementById('qr-btn');
+  qrcode.addEventListener("click", toggleQR);
 });
+
+function toggleQR(e) {
+  e.preventDefault();
+  Swal.fire({
+      title: "",
+      text: "Nguyen Quoc Giong | 9397250392",
+      confirmButtonColor: "#838484",
+      showCloseButton: true,
+      showConfirmButton: false,
+      imageUrl: "https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/anh-giong/GRI04693.webp",
+      imageWidth: "100%",
+      imageHeight: "auto",
+      imageAlt: "Custom image",
+      html: `
+          <div class="qrcode-box">
+              <div class="item">
+                  <div class="qrcode-img">
+                      <img src="assets/images/qrcode.jpg" alt="">
+                  </div>
+                  <p class="name">Nguyen Quoc Giong</p>
+              </div>
+          </div>
+      `,
+  });
+}
 
 async function handleFormSubmit(e) {
   e.preventDefault();
@@ -213,7 +241,7 @@ async function handleFormSubmit(e) {
     },
   });
 
-  const url = "/exec?sheet=confirm";
+  const url = "https://script.google.com/macros/s/AKfycbyE2nTF3iRtRZEW5BSFLiPI7VvugqZ516nxTmDZ_iTBNp2d48Vc0PTP5hPuN7LOio42iw/exec/exec?sheet=confirm";
 
   try {
     const res = await fetch(url, {

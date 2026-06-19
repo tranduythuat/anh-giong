@@ -25,7 +25,8 @@
 
         .vi {
             font-style: italic;
-            font-size: 7.5px;
+            font-size: 9.5px;
+            text-transform: uppercase;
         }
 
         .section {
@@ -35,6 +36,7 @@
         }
 
         .outdoor {
+            width: 100%;
             margin-top: 8%;
             .color-palette {
                 margin: 5% 0 3%;

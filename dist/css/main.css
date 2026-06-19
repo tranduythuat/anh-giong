@@ -567,7 +567,7 @@ header {
   background: url("../../assets/images/bg.png") no-repeat center/cover;
 }
 .timeline .timeline-items {
-  width: 371px;
+  width: 420px;
   aspect-ratio: 371/513;
   background: url("../../assets/images/flower circle.png") no-repeat center/cover;
   display: flex;
@@ -610,7 +610,7 @@ header {
 }
 @media (max-width: 500px) {
   .timeline .timeline-items {
-    width: 74.2vw;
+    width: 84vw;
   }
   .timeline .timeline-items .item .icon {
     max-width: 7.8vw;
@@ -650,12 +650,14 @@ header {
 }
 .dresscode .content .vi {
   font-style: italic;
-  font-size: 7.5px;
+  font-size: 9.5px;
+  text-transform: uppercase;
 }
 .dresscode .content .section .vi {
   font-style: italic;
 }
 .dresscode .content .outdoor {
+  width: 100%;
   margin-top: 8%;
 }
 .dresscode .content .outdoor .color-palette {
@@ -1194,6 +1196,7 @@ header {
   flex-direction: column;
   text-align: center;
   font-family: "SVN-GothamBook", sans-serif;
+  padding: 0 10%;
 }
 .qrcode .content h2 {
   font-size: 52px;
@@ -1242,6 +1245,25 @@ header {
   font-size: 13px;
   margin-bottom: 15%;
 }
+.qrcode .content .qr-btn {
+  display: block;
+  width: 80%;
+  font-family: "SVN-gothamBold", sans-serif;
+  text-decoration: none;
+  padding: 1.7% 7%;
+  margin: 0 auto;
+  background: #8f441f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 9.11px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background 0.3s ease;
+  margin-bottom: 10%;
+}
 @media (max-width: 500px) {
   .qrcode .content h2 {
     font-size: 10.4vw;
@@ -1263,6 +1285,55 @@ header {
     border-radius: 2vw;
   }
   .qrcode .content .qrcode-info {
+    font-size: 2.6vw;
+  }
+  .qrcode .content .qr-btn {
+    font-size: 1.822vw;
+  }
+}
+
+div:where(.swal2-container) img:where(.swal2-image) {
+  margin: 0 !important;
+  object-fit: cover;
+  object-position: 100% 40%;
+  aspect-ratio: 3/2;
+}
+
+.qrcode-box {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.qrcode-box .item {
+  width: 100%;
+  margin-bottom: 6%;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.qrcode-box .item .info {
+  margin-bottom: 2%;
+}
+.qrcode-box .item .name {
+  text-transform: uppercase;
+  margin-top: 4%;
+}
+.qrcode-box .item .qrcode-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.qrcode-box .item .qrcode-img img {
+  margin-top: 2%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+@media (max-width: 500px) {
+  .qrcode-box .item {
     font-size: 2.6vw;
   }
 }
