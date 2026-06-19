@@ -728,9 +728,6 @@ header {
   .dresscode .content .vi {
     font-size: 1.5vw;
   }
-  .dresscode .content .outdoor .color-palette {
-    transform: translateX(2%);
-  }
   .dresscode .content .outdoor .color-palette .color-circle {
     max-width: 7.6vw;
   }
